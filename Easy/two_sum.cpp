@@ -8,24 +8,15 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> store;
-        unordered_map<string, int> umap;
-        for (int i : nums)
+        unordered_map<int, int> umap;
+        for (int i = 0; i < nums.size(); i++)
         {
-            umap[to_string(nums[i])] = i;
-        }
-        for (int i : nums)
-        {
-            if(umap.at(to_string(target - nums[i])))
+            if(umap.count(target-nums[i]))
             {
-                store.push_back(umap.at(to_string(target - nums[i])));
-                break;
+                return vector<int> {umap[target - nums[i]], i};
             }
-            else
-            {
-                continue;
-            }
+            umap[nums[i]] = i;
         }
-        return store;
+        return vector<int> {};
     }
 };
