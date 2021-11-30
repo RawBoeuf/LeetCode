@@ -24,6 +24,6 @@ public:
 
 /*
 LeetCode Statistics:
-8 ms - Beats 64.54% of Users
-10.7 mb - Beats 56.25% of Users
+16 ms - Beats 64.54% of Users
+8.4 mb - Beats 56.25% of Users
 */
