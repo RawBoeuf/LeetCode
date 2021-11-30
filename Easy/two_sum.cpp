@@ -11,11 +11,12 @@ public:
         unordered_map<int, int> umap;
         for (int i = 0; i < nums.size(); i++)
         {
-            if(umap.count(target-nums[i]))
+            int test = target-nums[i];
+            if(umap.count(test))
             {
-                return vector<int> {umap[target - nums[i]], i};
+                return vector<int> {umap[test], i};
             }
-            umap[nums[i]] = i;
+            umap.emplace(nums[i], i);
         }
         return vector<int> {};
     }
